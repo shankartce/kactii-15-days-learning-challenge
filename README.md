@@ -17,8 +17,8 @@
 ## 🛠️ Tech Stack
 * **Language:** Python 3.10+
 * **Version Control:** Git & GitHub
-* **IDE:** VS Code
+* **IDE:** Kiro.dev
 
 ## 📝 Learnings
 This repository documents my journey from zero to building AI Agents.
-Check out my detailed learning notes here: [Link to your GitBook]
+Check out my detailed learning notes here: https://shankar-1.gitbook.io/mylearning/
