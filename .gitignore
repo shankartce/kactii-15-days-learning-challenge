@@ -1,0 +1,6 @@
+# GenAI Security - Ignore these files
+venv/
+__pycache__/
+.env
+*.json
+!mission_report.json
