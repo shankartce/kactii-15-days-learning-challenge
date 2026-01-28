@@ -1,0 +1,8 @@
+# Requirements for GenAI Learning Project
+# External dependencies found in the Python files
+
+# For Ollama API interactions (day_5_ollama.py, day6_prompt_engineering.py, day7_ai_assistant.py, day8_embeddings.py)
+ollama
+
+# For numerical operations and embeddings (day8_embeddings.py)
+numpy
