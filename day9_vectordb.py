@@ -4,11 +4,14 @@ from chromadb import Documents, EmbeddingFunction, Embeddings
 
 # 1. Custom Embedding Function (Connecting Chroma to Ollama)
 class OllamaEmbeddingFunction(EmbeddingFunction):
+    def __init__(self, model_name='nomic-embed-text'):
+        self.model_name = model_name
+    
     def __call__(self, input: Documents) -> Embeddings:
         embeddings = []
         for text in input:
             # Call the local model for each document
-            response = ollama.embeddings(model='llama3.2', prompt=text)
+            response = ollama.embeddings(model=self.model_name, prompt=text)
             embeddings.append(response['embedding'])
         return embeddings
 
