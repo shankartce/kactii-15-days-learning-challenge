@@ -11,12 +11,12 @@
 | **02** | Python Essentials (JSON/Data) | ✅ Completed |
 | **03** | Git & Developer Workflow | ✅ Completed |
 | **04** | LLM Architecture (Mental Models) | ✅ Completed |
-| **05** | First LLM Call (API) | ⏳ Pending |
-| **06** | Prompt Engineering Basics | ⏳ Pending |
-| **07** | Mini Project: AI Text Assistant | ⏳ Pending |
-| **08** | Embeddings & Vector Search | ⏳ Pending |
-| **09** | Vector Database (Chroma/FAISS) | ⏳ Pending |
-| **10** | RAG (Retrieval Augmented Generation) | ⏳ Pending |
+| **05** | First LLM Call (API) | ✅ Completed |
+| **06** | Prompt Engineering Basics | ✅ Completed |
+| **07** | Mini Project: AI Text Assistant | ✅ Completed |
+| **08** | Embeddings & Vector Search | ✅ Completed |
+| **09** | Vector Database (Chroma/FAISS) | ✅ Completed |
+| **10** | RAG (Retrieval Augmented Generation) | ✅ Completed |
 | **11** | RAG Mini Project | ⏳ Pending |
 | **12** | FastAPI Deployment | ⏳ Pending |
 | **13** | AI Agent Basics | ⏳ Pending |

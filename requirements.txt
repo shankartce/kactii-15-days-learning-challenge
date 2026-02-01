@@ -6,3 +6,5 @@ ollama
 
 # For numerical operations and embeddings (day8_embeddings.py)
 numpy
+
+chromadb
