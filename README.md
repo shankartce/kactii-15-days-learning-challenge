@@ -17,7 +17,7 @@
 | **08** | Embeddings & Vector Search | ✅ Completed |
 | **09** | Vector Database (Chroma/FAISS) | ✅ Completed |
 | **10** | RAG (Retrieval Augmented Generation) | ✅ Completed |
-| **11** | RAG Mini Project | ⏳ Pending |
+| **11** | RAG Mini Project | ✅ Completed |
 | **12** | FastAPI Deployment | ⏳ Pending |
 | **13** | AI Agent Basics | ⏳ Pending |
 | **14** | Final Project Build | ⏳ Pending |
