@@ -8,3 +8,6 @@ ollama
 numpy
 
 chromadb
+fastapi
+pydantic
+uvicorn

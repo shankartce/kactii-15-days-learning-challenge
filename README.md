@@ -18,7 +18,7 @@
 | **09** | Vector Database (Chroma/FAISS) | ✅ Completed |
 | **10** | RAG (Retrieval Augmented Generation) | ✅ Completed |
 | **11** | RAG Mini Project | ✅ Completed |
-| **12** | FastAPI Deployment | ⏳ Pending |
+| **12** | FastAPI Deployment | ✅ Completed |
 | **13** | AI Agent Basics | ⏳ Pending |
 | **14** | Final Project Build | ⏳ Pending |
 | **15** | Packaging & Showcase | ⏳ Pending |
