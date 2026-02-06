@@ -1,0 +1,27 @@
+John Doe
+Software Engineer
+Email: john.doe@email.com | Phone: (555) 123-4567
+
+EXPERIENCE
+
+Senior Software Engineer | Tech Company Inc. | 2020 - Present
+• Responsible for developing web applications
+• Worked with the team on various projects
+• Helped improve the system
+• Used Python and JavaScript
+
+Software Developer | StartUp Co. | 2018 - 2020
+• Built features for the product
+• Fixed bugs and issues
+• Collaborated with team members
+• Participated in code reviews
+
+EDUCATION
+
+Bachelor of Science in Computer Science
+University Name | 2014 - 2018
+
+SKILLS
+
+Python, JavaScript, React, Node.js, SQL, Git
+Hard worker, team player, good communicator

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Reviewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .main-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 250px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Courier New', monospace;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+        
+        .feedback-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        .feedback-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feedback-title::before {
+            content: "🤖";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        .feedback-content {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            white-space: pre-wrap;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #333;
+        }
+        
+        .error {
+            background: #fee;
+            border-left-color: #f44336;
+            color: #c62828;
+        }
+        
+        .rules-applied {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+        
+        .rules-applied h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        
+        .rules-applied ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .rules-applied li {
+            padding: 5px 0;
+            color: #555;
+        }
+        
+        .rules-applied li::before {
+            content: "✓ ";
+            color: #1976d2;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .loading.active {
+            display: block;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .main-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 AI Resume Reviewer</h1>
+            <p>Get instant feedback on your resume powered by AI</p>
+        </div>
+        
+        <div class="main-card">
+            <form method="POST" action="/" id="resumeForm">
+                <div class="form-group">
+                    <label for="resume_text">Paste Your Resume Text:</label>
+                    <textarea 
+                        name="resume_text" 
+                        id="resume_text" 
+                        placeholder="Paste your resume content here...&#10;&#10;Example:&#10;John Doe&#10;Software Engineer&#10;&#10;Experience:&#10;• Developed web applications using Python and FastAPI&#10;• Improved system performance by 40%&#10;• Led a team of 5 developers..."
+                        required>{{ resume_text if resume_text else '' }}</textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    🚀 Review My Resume
+                </button>
+            </form>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Analyzing your resume... This may take a few seconds.</p>
+            </div>
+            
+            {% if error %}
+            <div class="feedback-section">
+                <div class="feedback-content error">
+                    <strong>Error:</strong> {{ error }}
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if feedback %}
+            <div class="feedback-section">
+                <h2 class="feedback-title">AI Feedback</h2>
+                <div class="feedback-content">{{ feedback }}</div>
+                
+                {% if rules_applied %}
+                <div class="rules-applied">
+                    <h3>📋 Rules Applied in This Review:</h3>
+                    <ul>
+                        {% for rule in rules_applied %}
+                        <li>{{ rule }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <script>
+        const form = document.getElementById('resumeForm');
+        const loading = document.getElementById('loading');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        form.addEventListener('submit', function() {
+            loading.classList.add('active');
+            submitBtn.disabled = true;
+            submitBtn.textContent = '⏳ Processing...';
+        });
+    </script>
+</body>
+</html>

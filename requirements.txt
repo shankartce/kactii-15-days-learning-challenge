@@ -7,7 +7,20 @@ ollama
 # For numerical operations and embeddings (day8_embeddings.py)
 numpy
 
+# For vector database (day9_vectordb.py, day10_rag.py, day11_rag_project.py)
+chromadb
+
+# For web API and server (day12_api.py, day14_final_project.py)
+fastapi
+uvicorn[standard]
+pydantic
+
+# For Jinja2 templates (day14_final_project.py)
+jinja2
+python-multipart
+
 chromadb
 fastapi
 pydantic
 uvicorn
+python-multipart
