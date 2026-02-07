@@ -19,15 +19,34 @@
 | **10** | RAG (Retrieval Augmented Generation) | ✅ Completed |
 | **11** | RAG Mini Project | ✅ Completed |
 | **12** | FastAPI Deployment | ✅ Completed |
-| **13** | AI Agent Basics | ⏳ Pending |
-| **14** | Final Project Build | ⏳ Pending |
-| **15** | Packaging & Showcase | ⏳ Pending |
+| **13** | AI Agent Basics | ✅ Completed |
+| **14** | Final Project Build | ✅ Completed |
+| **15** | Packaging & Showcase | ✅ Completed |
+
+# 🚀 AI Resume Roaster & Improver (RAG-Powered)
+
+An intelligent career assistant that reviews resumes against industry best practices using Local LLMs (Llama 3.2) and Vector Search (ChromaDB).
+
+## 🏗️ Architecture
+**User** → **FastAPI** → **RAG Retrieval (ChromaDB)** → **Llama 3.2 (Ollama)** → **Actionable Feedback**
+
+## ✨ Features
+- **RAG-Powered Analysis:** Doesn't just guess; retrieves specific rules from a "Best Practices" database.
+- **Privacy-First:** Runs 100% locally. No data is sent to the cloud.
+- **REST API:** Fully functional FastAPI backend ready for frontend integration.
+- **Agentic Logic:** Uses tool-calling patterns to structure feedback.
 
 ## 🛠️ Tech Stack
-* **Language:** Python 3.10+
-* **Version Control:** Git & GitHub
-* **IDE:** Kiro.dev
-* **Local LLM:** Ollama
+- **Model:** Llama 3.2 (via Ollama)
+- **Database:** ChromaDB (Vector Store)
+- **Backend:** FastAPI & Python 3.10+
+- **Embeddings:** Ollama Embeddings
+
+## 🚀 How to Run
+1. **Clone the repo**
+   ```bash
+   git clone [https://github.com/yourusername/kactii-challenge.git](https://github.com/yourusername/kactii-challenge.git)
+   cd kactii-challenge
 
 ## 📝 Learnings
 This repository documents my journey from zero to building AI Agents.
